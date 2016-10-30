@@ -1,0 +1,25 @@
+AppBundle\Entity\Couleur:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\CouleurRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: 255
+            unique: true
+        hexa:
+            type: string
+            length: 255
+            unique: true
+    lifecycleCallbacks: {  }
+
+    oneToMany:
+        item:
+            targetEntity: Item
+            mappedBy: couleur

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body -%}
+    <div class="container">
+		<div class="row">
+		    <div class="col-xs-2 col-md-4"></div>
+		    <div class="col-xs-8 col-md-4">
+			  	<div class="form-group">
+			  		<h1>Reset votre mot de passe</h1>
+			  		<br>
+					
+					{% block fos_user_content %}
+					<p>
+						{{ 'resetting.check_email'|trans({'%email%': email}) }}
+					</p>
+					{% endblock %}
+				</div>
+			</div>
+		</div>
+	</div>
+{%endblock%}

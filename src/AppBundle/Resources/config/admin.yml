@@ -1,0 +1,41 @@
+services:
+    app.admin.categorie:
+        class: AppBundle\Admin\CategorieAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Categorie" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Categorie
+            - ~
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+    app.admin.item:
+        class: AppBundle\Admin\ItemAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Item" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Item
+            - ~
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+    app.admin.couleur:
+        class: AppBundle\Admin\CouleurAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Couleur" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Couleur
+            - ~
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+    app.admin.taille:
+        class: AppBundle\Admin\TailleAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Taille" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Taille
+            - ~
+        calls:
+            - [ setTranslationDomain, [AppBundle]]

@@ -1,0 +1,49 @@
+AppBundle\Entity\Item:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\ItemRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: 255
+        prix:
+            type: decimal
+            precision: 10
+            scale: 0
+        poids:
+            type: decimal
+            precision: 10
+            scale: 0
+        description:
+            type: string
+            length: '1000'
+            nullable: true
+        disponible:
+            type: boolean
+    lifecycleCallbacks: {  }
+
+    manyToOne:
+        categorie:
+            targetEntity: Categorie
+            inversedBy: item
+            joinColumn:
+                name: categorie_id
+                referencedColumnName: id
+        couleur:
+            targetEntity: Couleur
+            inversedBy: item
+            joinColumn:
+                name: couleur_id
+                referencedColumnName: id
+        taille:
+            targetEntity: Taille
+            inversedBy: item
+            joinColumn:
+                name: taille_id
+                referencedColumnName: id

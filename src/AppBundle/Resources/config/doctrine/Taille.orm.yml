@@ -1,0 +1,22 @@
+AppBundle\Entity\Taille:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\TailleRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        taille:
+            type: decimal
+            precision: 10
+            scale: 0
+            unique: true
+    lifecycleCallbacks: {  }
+
+    oneToMany:
+        item:
+            targetEntity: Item
+            mappedBy: taille
